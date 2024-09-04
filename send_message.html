@@ -1,0 +1,15 @@
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = htmlspecialchars($_POST['name']);
+    $email = htmlspecialchars($_POST['email']);
+    $message = htmlspecialchars($_POST['message']);
+
+    // Enviar el correo electrónico (simulado)
+    // mail($email, "Nuevo mensaje de $name", $message);
+
+    echo "<h1>Gracias, $name!</h1><p>Tu mensaje ha sido enviado correctamente. Nos pondremos en contacto contigo pronto.</p>";
+} else {
+    header("Location: contact.php");
+    exit();
+}
+?>
